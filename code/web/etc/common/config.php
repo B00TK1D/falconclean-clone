@@ -3,14 +3,11 @@
     $config = [
         "mysql" => [
             "web" => [
-                "host" => "localhost",
+                "host" => "falconclean.db",
                 "database" => "falconclean",
                 "user" => "falconclean",
-                "password" => "falconcleansupersecretlongasspassword4db",
+                "password" => getenv("MYSQL_ROOT_PASSWORD"),
             ]
-        ],
-        "security" => [
-            "password" => "6716",
         ],
     ];
 

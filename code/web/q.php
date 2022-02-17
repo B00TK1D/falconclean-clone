@@ -8,7 +8,7 @@
         redirect("/admin/assign.php?qr=" . $qr);
     }
 
-    $userID = checkJoin();
+    $userID = checkJoined();
 
     $issues = readObjects("issues", ["machineID" => $machine["id"]]);
 

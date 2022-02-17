@@ -19,13 +19,16 @@ services:
 
   db:
     image: "mysql"
-    container_name: weekendlife.db
+    container_name: falconclean.db
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - "../../../db/webdb/data/mysql/:/var/lib/mysql/"
       - "../../../code/db/:/docker-entrypoint-initdb.d/"
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=falconclean
+      - MYSQL_PASSWORD=${MYSQL_FALCONCLEAN_PASSWORD}
+      - MYSQL_DATABASE=falconclean
     restart: always
     networks:
       - default
