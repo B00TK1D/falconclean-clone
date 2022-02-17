@@ -1,3 +1,13 @@
+<?php
+
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  $machineID = param("machineID");
+
+  $alertList = getObjects("alerts", ["machineID" => $machineID]);
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,9 +40,11 @@
     <div class="div-block">
       <h1>Issue Alert</h1>
       <div>The following issues have been<br />reported for this machine:</div>
-      <div>&quot;Does not dry&quot;</div>
+      <?php foreach ($alertList as $alert) { ?>
+        <div>&quot;<?php print($alert["description"]) ?>&quot;</div>
+      <?php } ?>
       <a href="/load.php" class="submit-button w-button">Back</a>
-      <a href="/api/load/create.php" class="submit-button w-button">Load Laundry Anyway</a>
+      <a href="/api/load/create.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">Load Laundry Anyway</a>
     </div>
     <script src="/jquery.js" type="text/javascript"></script>
   </body>

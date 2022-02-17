@@ -5,8 +5,16 @@
     $machine = readObject("machines", ["qr" => $qr], 1);
 
     if ($machine == null) {
-        redirect("/admin/assign.php");
+        redirect("/admin/assign.php?qr=" . $qr);
     }
 
-    redirect("/load.php?id=" . $machine["loadID"]);
+    $userID = checkJoin();
+
+    $issues = readObjects("issues", ["machineID" => $machine["id"]]);
+
+    if (count($issues) > 0) {
+        redirect("/alert.php?machineID=" . $machine["id"]);
+    }
+
+    redirect("/load.php?machineID=" . $machine["loadID"]);
 ?>

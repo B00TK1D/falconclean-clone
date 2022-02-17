@@ -1,3 +1,11 @@
+<?php
+
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  $machineID = param("machineID");
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,7 +40,7 @@
         <form method="post" action="/api/issue/create.php" class="form">
           <h1>Report</h1>
           <textarea placeholder="What&#x27;s broken?" maxlength="5000" name="description" class="textarea w-input"></textarea>
-          <input type="number" hidden="" name="machinID" value="1" />
+          <input type="number" hidden="" name="machineID" value="<?php print($machineID); ?>" />
           <input type="submit" value="Submit" class="submit-button w-button" />
         </form>
       </div>

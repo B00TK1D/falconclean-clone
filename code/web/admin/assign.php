@@ -1,3 +1,12 @@
+<?php
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  $qr = param("qr");
+  $typeList = readObjects("types");
+  $roomList = readObject("rooms");
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,14 +43,17 @@
         <form action="/api/machine/create.php" method="get" class="form">
           <select name="type"required="" class="select-field w-select">
             <option value="">Type</option>
-            <option value="1">Washer</option>
-            <option value="2">Dryer</option>
+            <?php foreach ($typeList as $type) { ?>
+              <option value="<?php print($type["id"]); ?>"><?php print($type["name"]); ?></option>
+            <?php } ?>
           </select>
           <select name="room" required="" class="select-field w-select">
             <option value="">Location</option>
-            <option value="1">Sijan</option>
-            <option value="2">Vandy</option>
+            <?php foreach ($roomList as $room) { ?>
+              <option value="<?php print($room["id"]); ?>"><?php print($room["name"]); ?></option>
+            <?php } ?>
           </select>
+          <input type="number" hidden="" name="qr" value="<?php print($qr); ?>" />
           <input type="submit" value="Save" class="submit-button w-button" />
         </form>
       </div>

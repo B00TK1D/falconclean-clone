@@ -1,3 +1,16 @@
+<?php
+
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  $machineID = param("machineID");
+
+  $load = getObject("loads", ["machineID" => $machineID], 1);
+
+  $user = getObject("users", ["id" => $load["userID"]], 1);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,7 +41,7 @@
   </head>
   <body class="body">
     <div class="div-block">
-      <h1>This laundry was loaded by<br />Josiah Stearns<br />56 minutes ago</h1>
+      <h1>This laundry was loaded by <br /><?php print($user["name"] . " " . $load["created"]); ?><br /> minutes ago</h1>
       <!--<a href="#" class="submit-button w-button">Send them a reminder</a>-->
       <a href="/load.php" class="submit-button w-button">Back</a>
     </div>

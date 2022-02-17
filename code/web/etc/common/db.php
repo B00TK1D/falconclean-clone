@@ -71,9 +71,10 @@
                 "userID" => "i",
                 "machineID" => "i",
                 "load" => "s",
+                "created" => "s",
             ],
             "sort" => [
-                "load" => "ASC"
+                "created" => "ASC"
             ],
         ],
         "issues" => [
@@ -84,9 +85,10 @@
                 "userID" => "i",
                 "severity" => "i",
                 "description" => "s",
+                "created" => "s",
             ],
             "sort" => [
-                "severity" => "DESC"
+                "created" => "DESC"
             ],
         ],
     ];

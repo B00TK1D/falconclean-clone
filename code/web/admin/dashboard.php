@@ -1,3 +1,16 @@
+<?php
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  $reportList = readObjects("reports");
+  $users = readObjects("users");
+
+  foreach ($reportList as $report) {
+    $report["room"] = readObject("rooms", ["id" => $report["roomID"]]);
+    $report["user"] = readObject("users", ["id" => $report["userID"]]);
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -31,12 +44,11 @@
     <div class="dashboard-section">
       <h1>Reports</h1>
       <div class="list">
-        <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
-          <div>Sijan - #0201: Not drying clothes (Reported by Josiah Stearns on 03 Jan 2022)</div>
-        </div>
-        <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
-          <div>Sijan - #0301: Doesn&#x27;t turn on(Reported by Josiah Stearns on 07 Jan 2022)</div>
-        </div>
+        <?php foreach ($reportList as $report) { ?>
+          <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
+            <div><?php print($report["room"]["name"] . " - #" . $report["id"] . ": " . $report["description"] . "(Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?> - #0201: Not drying clothes (Reported by Josiah Stearns on 03 Jan 2022)</div>
+          </div>
+        <?php } ?>
       </div>
       <div class="horizontal-line"></div>
     </div>
@@ -44,11 +56,11 @@
       <h1>Usage</h1>
       <div class="list">
         <div class="list-item">
-          <div>102 total users</div>
+          <div><?php print(sizeof($users)); ?> total users</div>
         </div>
-        <div class="list-item">
+        <!--<div class="list-item">
           <div><span>56 users over the last week (up 23%)</span></div>
-        </div>
+        </div>-->
         <div class="horizontal-line"></div>
       </div>
     </div>
