@@ -1,0 +1,14 @@
+DirectoryIndex /index.php
+FallbackResource /index.php
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+RewriteRule ^(.*)$ $1 [NS,E=no-gzip:1,E=dont-vary:1]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [L,QSA]
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|bash|inc|bak|sql|env|md|json|lock|config|txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

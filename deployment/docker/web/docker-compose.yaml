@@ -1,0 +1,33 @@
+version: '3.5'
+
+services:
+
+  web:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/web/web.Dockerfile
+    container_name: falconclean.web
+    volumes:
+        - ../../../code/web:/var/www/html
+    restart: always
+    networks:
+      - default
+
+
+  db:
+    image: "mysql"
+    container_name: weekendlife.db
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "../../../db/webdb/data/mysql/:/var/lib/mysql/"
+      - "../../../code/db/:/docker-entrypoint-initdb.d/"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    restart: always
+    networks:
+      - default
+
+
+networks:
+  default:
+    name: falconclean.default
