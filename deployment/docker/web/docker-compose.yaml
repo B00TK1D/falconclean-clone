@@ -7,6 +7,9 @@ services:
       context: ../../..
       dockerfile: deployment/docker/web/web.Dockerfile
     container_name: falconclean.web
+    ports:
+      - 80:80
+      - 443:443
     volumes:
         - ../../../code/web:/var/www/html
     restart: always

@@ -12,7 +12,6 @@ RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/local/include/
 RUN docker-php-ext-configure gmp 
 RUN docker-php-ext-install gmp
 
-RUN composer require stripe/stripe-php
 RUN composer require sendgrid/sendgrid
 RUN composer require minishlink/web-push
 
