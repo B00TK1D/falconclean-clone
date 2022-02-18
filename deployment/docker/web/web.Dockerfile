@@ -23,8 +23,8 @@ RUN /opt/certbot/bin/pip install --upgrade pip
 RUN /opt/certbot/bin/pip install certbot certbot-apache
 
 RUN ln -s /opt/certbot/bin/certbot /usr/bin/certbot
-RUN certbot --apache --non-interactive --agree-tos -m stearns.josiah@gmail.com --domains falconclean.net
+#RUN certbot --apache --non-interactive --agree-tos -m stearns.josiah@gmail.com --domains falconclean.net
 
 RUN a2enmod rewrite
 
-RUN echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | tee -a /etc/crontab > /dev/null
+#RUN echo "0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | tee -a /etc/crontab > /dev/null

@@ -36,8 +36,8 @@
         n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
       }(window, document);
     </script>
-    <link href="https://uploads-ssl.webflow.com/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="https://uploads-ssl.webflow.com/img/webclip.png" rel="apple-touch-icon" />
+    <link href="/img/falconclean-logo-32.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/img/falconclean-logo-256.png" rel="apple-touch-icon" />
   </head>
   <body class="body">
     <div class="div-block">
