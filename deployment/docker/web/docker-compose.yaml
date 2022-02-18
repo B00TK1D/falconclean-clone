@@ -12,6 +12,8 @@ services:
       - 443:443
     volumes:
         - ../../../code/web:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=${MYSQL_FALCONCLEAN_PASSWORD}
     restart: always
     networks:
       - default

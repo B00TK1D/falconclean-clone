@@ -6,7 +6,7 @@
                 "host" => "falconclean.db",
                 "database" => "falconclean",
                 "user" => "falconclean",
-                "password" => getenv("MYSQL_ROOT_PASSWORD"),
+                "password" => getenv("MYSQL_PASSWORD"),
             ]
         ],
     ];
