@@ -4,9 +4,9 @@
 
   $machineID = param("machineID");
 
-  $load = getObject("loads", ["machineID" => $machineID], 1);
+  $load = readObject("loads", ["machineID" => $machineID], 1);
 
-  $user = getObject("users", ["id" => $load["userID"]], 1);
+  $user = readObject("users", ["id" => $load["userID"]], 1);
 
 ?>
 
