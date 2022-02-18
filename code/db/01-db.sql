@@ -1,4 +1,3 @@
--------------  User data ---------------
 
 
 CREATE TABLE IF NOT EXISTS `rooms` (

@@ -71,10 +71,9 @@
                 "userID" => "i",
                 "machineID" => "i",
                 "load" => "s",
-                "created" => "s",
             ],
             "sort" => [
-                "created" => "ASC"
+                "load" => "ASC"
             ],
         ],
         "issues" => [
