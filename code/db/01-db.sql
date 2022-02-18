@@ -1,4 +1,6 @@
--------------  User data --------------
+-------------  User data ---------------
+
+
 CREATE TABLE IF NOT EXISTS `rooms` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',

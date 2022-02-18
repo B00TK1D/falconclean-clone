@@ -13,7 +13,7 @@ services:
     volumes:
         - ../../../code/web:/var/www/html
     environment:
-      - MYSQL_PASSWORD=${MYSQL_FALCONCLEAN_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD}
     restart: always
     networks:
       - default
@@ -28,8 +28,6 @@ services:
       - "../../../code/db/:/docker-entrypoint-initdb.d/"
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_USER=falconclean
-      - MYSQL_PASSWORD=${MYSQL_FALCONCLEAN_PASSWORD}
       - MYSQL_DATABASE=falconclean
     restart: always
     networks:
