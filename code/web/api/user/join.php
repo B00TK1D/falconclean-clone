@@ -4,7 +4,7 @@
     $user["name"] = param("name");
     $userID = createObject("users", $user);
 
-    setSession("name", $name);
+    setSession("name", $user["name"]);
     setSession("userID", $userID);
 
     redirect("/load.php");
