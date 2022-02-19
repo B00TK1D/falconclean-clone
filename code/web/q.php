@@ -12,7 +12,7 @@
 
     $userID = checkJoined();
 
-    $issues = readObjects("issues", ["machineID" => $machine["id"]]);
+    $issues = readObject("issues", ["machineID" => $machine["id"]]);
 
     if (count($issues) > 0) {
         redirect("/alert.php");
