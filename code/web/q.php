@@ -8,7 +8,7 @@
         redirect("/admin/assign.php?qr=" . $qr);
     }
 
-    set_param("machineID", $machine["id"]);
+    setParam("machineID", $machine["id"]);
 
     $userID = checkJoined();
 
