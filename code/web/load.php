@@ -2,7 +2,7 @@
 
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
-  $machineID = param("machineID");
+  $machineID = param("machineID", ["sticky" => true]);
 
 ?>
 
@@ -36,9 +36,9 @@
   </head>
   <body class="body">
     <div class="div-block">
-        <a href="/api/load/create.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">I&#x27;m loading laundry</a>
-        <a href="/success/notify.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">Somebody left their laundry</a>
-        <a href="/report.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">This machine is broken</a>
+        <a href="/api/load/create.php" class="submit-button w-button">I&#x27;m loading laundry</a>
+        <a href="/success/notify.php" class="submit-button w-button">Somebody left their laundry</a>
+        <a href="/report.php" class="submit-button w-button">This machine is broken</a>
     </div>
     <script src="/jquery.js" type="text/javascript"></script>
   </body>

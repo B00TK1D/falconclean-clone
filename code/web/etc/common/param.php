@@ -81,7 +81,7 @@
     function schemaParam($fields, $requirements = []) {
         $params = [];
         foreach ($fields as $field => $value) {
-            $param = param([$field, null]);
+            $param = param([$field, null], ["sticky" => true]);
             if ($param != null) $params[$field] = $param;
         }
         foreach ($requirements as $requirement) {

@@ -8,13 +8,15 @@
         redirect("/admin/assign.php?qr=" . $qr);
     }
 
+    set_param("machineID", $machine["id"]);
+
     $userID = checkJoined();
 
     $issues = readObjects("issues", ["machineID" => $machine["id"]]);
 
     if (count($issues) > 0) {
-        redirect("/alert.php?machineID=" . $machine["id"]);
+        redirect("/alert.php");
     }
 
-    redirect("/load.php?machineID=" . $machine["loadID"]);
+    redirect("/load.php");
 ?>
