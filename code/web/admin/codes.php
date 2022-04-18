@@ -51,7 +51,7 @@
       var codes = document.getElementsByClassName("qr-code");
       for (var i = 0; i < codes.length; i++) {
         new QRCode(codes.item(i), {
-          text: "https://falconclean.app/q?r=" + i,
+          text: "https://falconclean.net/q?r=" + i,
           correctLevel: QRCode.CorrectLevel.L
         });
       }
