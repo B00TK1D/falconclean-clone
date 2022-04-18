@@ -49,7 +49,7 @@
         <?php foreach ($reportList as $report) { ?>
           <?php if ($report["room"] != null && $report["user"] != null && $report["machine"] != null) { ?>
             <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
-              <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . "(Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?> - #0201: Not drying clothes (Reported by Josiah Stearns on 03 Jan 2022)</div>
+              <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . "(Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?></div>
             </div>
           <?php } ?>
         <?php } ?>
