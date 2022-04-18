@@ -26,8 +26,8 @@
     }
 
     function checkJoined() {
-        if (getSession("name") != null) {
-            return getSession("name");
+        if (getSession("userID") != null) {
+            return getSession("userID");
         }
         redirect("/join.php");
     }
