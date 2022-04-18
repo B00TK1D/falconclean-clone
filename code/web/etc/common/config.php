@@ -9,6 +9,9 @@
                 "password" => getenv("MYSQL_PASSWORD"),
             ]
         ],
+        "security" => [
+            "password" => "password",
+        ],
     ];
 
     function config($key) {
