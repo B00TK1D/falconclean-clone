@@ -33,10 +33,10 @@
     </script>
     <link href="/img/falconclean-logo-32.png" rel="shortcut icon" type="image/x-icon" />
     <link href="/img/falconclean-logo-256.png" rel="apple-touch-icon" />
-  </head>
+  </head>xs
   <body class="body">
     <div class="div-block">
-        <a href="/api/load/create.php" class="submit-button w-button">I&#x27;m loading laundry</a>
+        <a href="/api/load/create.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">I&#x27;m loading laundry</a>
         <a href="/success/notify.php" class="submit-button w-button">Somebody left their laundry</a>
         <a href="/report.php" class="submit-button w-button">This machine is broken</a>
     </div>
