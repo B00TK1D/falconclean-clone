@@ -4,7 +4,7 @@
     $issue = schemaParam(objectFields("issues"));
     $issue["userID"] = checkJoined();
 
-    $issueID = createObject("loads", $load);
+    $issueID = createObject("issues", $issue);
 
     redirect("/success/report.php");
 ?>
