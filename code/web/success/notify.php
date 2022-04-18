@@ -41,7 +41,11 @@
   </head>
   <body class="body">
     <div class="div-block">
-      <h1>This laundry was loaded by <br /><?php print($user["name"] . "<br />" . time_elapsed_string($load["created"])); ?><br /></h1>
+      <?php if($load == null) { ?>
+        <h1>Nobody has used FalconClean on this machine yet</h1>
+      <?php } else { ?>
+        <h1>This laundry was loaded by <br /><?php print($user["name"] . "<br />" . time_elapsed_string($load["created"])); ?><br /></h1>
+      <?php } ?>
       <a href="/load.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">Back</a>
     </div>
     <script src="/jquery.js" type="text/javascript"></script>
