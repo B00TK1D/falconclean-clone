@@ -41,7 +41,7 @@
   </head>
   <body class="body">
     <div class="div-block">
-      <h1>This laundry was loaded by <br /><?php print($user["name"] . " " . time_elapsed_string(strtotime($load["created"]))); ?><br /> minutes ago</h1>
+      <h1>This laundry was loaded by <br /><?php print($user["name"] . " " . time_elapsed_string($load["created"])); ?><br /> minutes ago</h1>
       <a href="/load.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">Back</a>
     </div>
     <script src="/jquery.js" type="text/javascript"></script>
