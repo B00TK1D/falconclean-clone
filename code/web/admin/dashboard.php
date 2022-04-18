@@ -1,6 +1,8 @@
 <?php
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
+  checkAdmin();
+
   $reportList = readObject("issues");
   $users = readObject("users");
 

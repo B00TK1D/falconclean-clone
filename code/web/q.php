@@ -5,6 +5,7 @@
     $machine = readObject("machines", ["qr" => $qr], 1);
 
     if ($machine == null) {
+        checkAdmin();
         redirect("/admin/assign.php?qr=" . $qr);
     }
 

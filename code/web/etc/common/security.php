@@ -22,7 +22,7 @@
         if (getSession("admin") == true) {
             return true;
         }
-        redirect("/admin/login.php?redirect=" . urlencode($_SERVER["REQUEST_URI"]));
+        redirect("/admin/login.php");
     }
 
     function checkJoined() {
