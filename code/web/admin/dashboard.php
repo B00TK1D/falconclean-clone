@@ -1,8 +1,8 @@
 <?php
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
-  $reportList = readObjects("reports");
-  $users = readObjects("users");
+  $reportList = readObject("reports");
+  $users = readObject("users");
 
   foreach ($reportList as $report) {
     $report["room"] = readObject("rooms", ["id" => $report["roomID"]]);
