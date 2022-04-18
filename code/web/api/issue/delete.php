@@ -4,7 +4,7 @@
     checkAdmin();
 
     $id = param("id");
-    deleteObject("invoices", ["id" => $id]);
+    deleteObject("issues", ["id" => $id]);
 
     redirect("/admin/dashboard.php");
 ?>
