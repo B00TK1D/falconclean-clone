@@ -36,9 +36,7 @@ CREATE TABLE IF NOT EXISTS `machines` (
   `lon` float(10, 6) NOT NULL DEFAULT '-1',
   `created` timestamp DEFAULT now() NOT NULL,
   `updated` timestamp DEFAULT now() ON UPDATE now() NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`typeID`) REFERENCES `types`(`id`) ON UPDATE CASCADE ON DELETE RESTRICT,
-  FOREIGN KEY (`roomID`) REFERENCES `rooms`(`id`) ON UPDATE CASCADE ON DELETE RESTRICT
+  PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -58,9 +56,7 @@ CREATE TABLE IF NOT EXISTS `loads` (
   `load` timestamp DEFAULT now() NOT NULL,
   `created` timestamp DEFAULT now() NOT NULL,
   `updated` timestamp DEFAULT now() ON UPDATE now() NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`userID`) REFERENCES `users`(`id`) ON UPDATE CASCADE ON DELETE RESTRICT,
-  FOREIGN KEY (`machineID`) REFERENCES `machines`(`id`) ON UPDATE CASCADE ON DELETE RESTRICT
+  PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `issues` (
@@ -72,7 +68,5 @@ CREATE TABLE IF NOT EXISTS `issues` (
   `description` varchar(4096) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `created` timestamp DEFAULT now() NOT NULL,
   `updated` timestamp DEFAULT now() ON UPDATE now() NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`machineID`) REFERENCES `machines`(`id`) ON UPDATE CASCADE ON DELETE RESTRICT,
-  FOREIGN KEY (`userID`) REFERENCES `users`(`id`) ON UPDATE CASCADE ON DELETE RESTRICT
+  PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
