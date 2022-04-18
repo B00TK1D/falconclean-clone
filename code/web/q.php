@@ -15,8 +15,8 @@
     $issues = readObject("issues", ["machineID" => $machine["id"]]);
 
     if (count($issues) > 0) {
-        //redirect("/alert.php?machineID=" . $machine["id"]);
+        redirect("/alert.php?machineID=" . $machine["id"]);
     }
 
-    //redirect("/load.php?machineID" . $machine["id"]);
+    redirect("/load.php?machineID" . $machine["id"]);
 ?>
