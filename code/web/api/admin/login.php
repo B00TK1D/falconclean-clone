@@ -8,7 +8,7 @@
         setSession("admin", true);
     }
 
-    if ($redirect) {
+    if ($redirect != "") {
         redirect($redirect);
     }
     redirect("/admin/dashboard.php");
