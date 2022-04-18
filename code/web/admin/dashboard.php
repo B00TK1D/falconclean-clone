@@ -4,10 +4,11 @@
   $reportList = readObject("issues");
   $users = readObject("users");
 
-  foreach ($reportList as $report) {
+  foreach ($reportList as $key => $report) {
     $report["machine"] = readObject("machines", ["id" => $report["machineID"]], 1);
     $report["user"] = readObject("users", ["id" => $report["userID"]], 1);
     $report["room"] = readObject("rooms", ["id" => $report["machine"]["roomID"]], 1);
+    $reportList[$key] = $report;
   }
 
 ?>
