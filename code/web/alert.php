@@ -3,6 +3,8 @@
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
   $machineID = param("machineID", ["sticky" => true]);
+
+  print($machineID);
   
   $alertList = readObject("alerts", ["machineID" => $machineID]);
 
