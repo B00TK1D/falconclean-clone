@@ -6,7 +6,9 @@
 
   $load = readObject("loads", ["machineID" => $machineID], 1);
 
-  $user = readObject("users", ["id" => $load["userID"]], 1);
+  if ($load != null) {
+    $user = readObject("users", ["id" => $load["userID"]], 1);
+  }
 
 ?>
 
