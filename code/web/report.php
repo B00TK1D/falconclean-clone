@@ -2,7 +2,7 @@
 
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
-  $machineID = param("machineID");
+  $machineID = param("machineID", ["sticky" => true]);
 
 ?>
 
