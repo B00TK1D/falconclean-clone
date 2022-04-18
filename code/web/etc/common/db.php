@@ -73,7 +73,7 @@
                 "load" => "s",
             ],
             "sort" => [
-                "load" => "ASC"
+                "load" => "DESC"
             ],
         ],
         "issues" => [
