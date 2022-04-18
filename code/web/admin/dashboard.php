@@ -5,8 +5,9 @@
   $users = readObject("users");
 
   foreach ($reportList as $report) {
-    $report["room"] = readObject("rooms", ["id" => $report["roomID"]]);
+    $report["machine"] = readObject("machines", ["id" => $report["machineID"]]);
     $report["user"] = readObject("users", ["id" => $report["userID"]]);
+    $report["room"] = readObject("rooms", ["id" => $report["machine"]["roomID"]]);
   }
 
 ?>
