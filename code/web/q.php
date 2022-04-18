@@ -18,5 +18,5 @@
         redirect("/alert.php?machineID=" . $machine["id"]);
     }
 
-    redirect("/load.php?machineID" . $machine["id"]);
+    //redirect("/load.php?machineID" . $machine["id"]);
 ?>
