@@ -7,7 +7,7 @@
     if ($password == config("security.password")) {
         setSession("admin", true);
     }
-
+    
     if ($redirect != "") {
         redirect($redirect);
     }
