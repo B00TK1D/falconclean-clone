@@ -47,14 +47,11 @@
       <h1>Reports</h1>
       <div class="list">
         <?php foreach ($reportList as $report) { ?>
-          <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
-            <div><?php
-                  print($report["room"]["name"] . " - #" . 
-                  $report["id"] . ": " . 
-                  $report["description"] . "(Reported by " . 
-                  $report["user"]["name"] . " on " . 
-                  $report["created"] . ")"); ?> - #0201: Not drying clothes (Reported by Josiah Stearns on 03 Jan 2022)</div>
-          </div>
+          <?php if ($report["room"] != null && $report["user"] != null && $report["machine"] != null) { ?>
+            <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
+              <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . "(Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?> - #0201: Not drying clothes (Reported by Josiah Stearns on 03 Jan 2022)</div>
+            </div>
+          <?php } ?>
         <?php } ?>
       </div>
       <div class="horizontal-line"></div>
