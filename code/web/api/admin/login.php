@@ -4,7 +4,9 @@
     $password = param("password");
     if ($password == config("security.password")) {
         setSession("admin", true);
+        redirect("/admin/dashboard.php");
+    } else {
+        redirect("/admin/login.php?error=1");
     }
-    
-    redirect("/admin/dashboard.php");
+
 ?>

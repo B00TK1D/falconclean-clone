@@ -1,3 +1,10 @@
+<?php
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  $error = param("error");
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,6 +40,7 @@
         <form action="/api/admin/login.php" method="post">
             <label for="password">Code</label>
             <input type="password" class="w-input" maxlength="256" name="password" placeholder="" id="email" required="" />
+            <?php if ($error) { ?><label>Invalid Password</label><?php } ?>
             <input type="submit" value="Login" class="submit-button w-button" />
         </form>
       </div>
