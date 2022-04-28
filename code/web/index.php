@@ -55,6 +55,7 @@
       </div>
       <div class="horizontal-line"></div>
     </div>
+    <!--
     <div data-current="Tab 1" data-easing="ease" data-duration-in="0" data-duration-out="0" class="tabs w-tabs">
       <div class="tabs-menu w-tab-menu"><a class="tab-link-tab-1 w-inline-block w-tab-link w--current" onclick="">
           <div>Sijan</div>
@@ -80,18 +81,7 @@
         </div>
       </div>
     </div>
+    -->
     <script src="/jquery.js" type="text/javascript"></script>
-    <script>
-      $(document).ready(function() {
-        $(".tabs-menu a").click(function(e) {
-          e.preventDefault();
-          $(this).parent().addClass("w--current");
-          $(this).parent().siblings().removeClass("w--current");
-          var index = $(this).parent().index();
-          $(".tab-pane").removeClass("w--tab-active");
-          $(".tab-pane").eq(index).addClass("w--tab-active");
-        });
-      });
-    </script>
   </body>
 </html>
