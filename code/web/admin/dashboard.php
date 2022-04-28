@@ -5,6 +5,7 @@
 
   $reportList = readObject("issues");
   $users = readObject("users");
+  $machines = readObject("machines");
 
   foreach ($reportList as $key => $report) {
     $report["machine"] = readObject("machines", ["id" => $report["machineID"]], 1);
@@ -51,7 +52,7 @@
         <?php foreach ($reportList as $report) { ?>
           <?php if ($report["room"] != null && $report["user"] != null && $report["machine"] != null) { ?>
             <div class="list-item"><a href="/api/issue/delete?id=<?php print($report["id"]); ?>" class="icon-button w-inline-block"></a>
-              <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . "(Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?></div>
+              <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . " (Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?></div>
             </div>
           <?php } ?>
         <?php } ?>
@@ -63,6 +64,7 @@
       <div class="list">
         <div class="list-item">
           <div><?php print(sizeof($users)); ?> total users</div>
+          <div><?php print(sizeof($machines)); ?> total machines</div>
         </div>
         <!--<div class="list-item">
           <div><span>56 users over the last week (up 23%)</span></div>
