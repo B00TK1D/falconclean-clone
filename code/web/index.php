@@ -1,5 +1,5 @@
 <?php
-/*
+
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
   $rooms = getObjects("rooms");
@@ -11,7 +11,14 @@
       $machine["issues"] = getObjects("issues", ["machineID" => $machine["id"]]);
     }
   }
-*/
+
+  foreach ($room as $rooms) {
+    $room["capacity"] = 50;
+    $room["wait"] = 30;
+  }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -46,12 +53,11 @@
     <div class="dashboard-section">
       <h1>Current Usage</h1>
       <div class="list">
-        <div class="list-item">
-          <div>Sijan - 57% capacity (Estimated wait time: 32 minutes)</div>
-        </div>
-        <div class="list-item">
-          <div>Vandy - 87% capacity (Estimated wait time: 56 minutes)</div>
-        </div>
+        <?php foreach ($room as $rooms) { ?>
+          <div class="list-item">
+            <div><?php print($room["name"] . " - " . $room["capacity"] . "% capacity (Estimated wait time: " . $room["wait"] . "minutes)") ?></div>
+          </div>
+        <?php } ?>
       </div>
       <div class="horizontal-line"></div>
     </div>
