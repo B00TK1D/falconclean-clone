@@ -10,7 +10,7 @@
             ]
         ],
         "security" => [
-            "password" => "password",
+            "password" => "1337",
         ],
     ];
 
