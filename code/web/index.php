@@ -13,6 +13,7 @@
   }
 
   foreach ($rooms as $key => $room) {
+    $loads = readObject("loads", ["roomID" => $room["id"]]);
     $rooms[$key]["capacity"] = 50;
     $rooms[$key]["wait"] = 30;
   }
@@ -55,7 +56,7 @@
       <div class="list">
         <?php foreach ($rooms as $room) { ?>
           <div class="list-item">
-            <div><?php print($room["name"] . " - " . $room["capacity"] . "% capacity (Estimated wait time: " . $room["wait"] . "minutes)") ?></div>
+            <div><?php print($room["name"] . " - " . $room["capacity"] . "% capacity (Estimated wait time: " . $room["wait"] . " minutes)") ?></div>
           </div>
         <?php } ?>
       </div>

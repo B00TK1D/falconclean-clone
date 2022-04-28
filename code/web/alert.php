@@ -43,8 +43,7 @@
       <?php foreach ($alertList as $alert) { ?>
         <div>&quot;<?php print($alert["description"]) ?>&quot;</div>
       <?php } ?>
-      <a href="/load.php" class="submit-button w-button">Back</a>
-      <a href="/api/load/create.php?machineID=<?php print($machineID); ?>" class="submit-button w-button">Load Laundry Anyway</a>
+      <a href="/load.php" class="submit-button w-button">Okay</a>
     </div>
     <script src="/jquery.js" type="text/javascript"></script>
   </body>
