@@ -64,7 +64,9 @@
       <div class="list">
         <div class="list-item">
           <div><?php print(sizeof($users)); ?> total users</div>
-          <div><?php print(sizeof($machines)); ?> total machines</div>
+        </div>
+        <div class="list-item">
+        <div><?php print(sizeof($machines)); ?> total machines</div>
         </div>
         <!--<div class="list-item">
           <div><span>56 users over the last week (up 23%)</span></div>
