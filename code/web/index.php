@@ -47,10 +47,10 @@
       <h1>Current Usage</h1>
       <div class="list">
         <div class="list-item">
-          <div>Sijan - 57% capacity</div>
+          <div>Sijan - 57% capacity (Estimated wait time: 32 minutes)</div>
         </div>
         <div class="list-item">
-          <div>Vandy - 87% capacity</div>
+          <div>Vandy - 87% capacity (Estimated wait time: 56 minutes)</div>
         </div>
       </div>
       <div class="horizontal-line"></div>
