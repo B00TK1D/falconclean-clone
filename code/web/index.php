@@ -46,10 +46,10 @@
     <div class="dashboard-section">
       <h1>Current Usage</h1>
       <div class="list">
-        <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
+        <div class="list-item">
           <div>Sijan - 57% capacity</div>
         </div>
-        <div class="list-item"><a href="#" class="icon-button w-inline-block"></a>
+        <div class="list-item">
           <div>Vandy - 87% capacity</div>
         </div>
       </div>
