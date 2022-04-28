@@ -2,8 +2,8 @@
 
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
-  $rooms = getObjects("rooms");
-  $types = getObjects("types");
+  $rooms = getObject("rooms");
+  $types = getObject("types");
 
   foreach ($room as $key => $rooms) {
     $room["machines"] = getObjects("machines", ["roomID" => $room["id"]]);
