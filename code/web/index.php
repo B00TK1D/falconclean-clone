@@ -5,14 +5,14 @@
   $rooms = readObject("rooms");
   $types = readObject("types");
 
-  foreach ($room as $key => $rooms) {
+  foreach ($rooms as $key => $room) {
     $room["machines"] = getObjects("machines", ["roomID" => $room["id"]]);
     foreach ($machine as $key2 => $machine) {
       $machine["issues"] = getObjects("issues", ["machineID" => $machine["id"]]);
     }
   }
 
-  foreach ($room as $rooms) {
+  foreach ($rooms as $room) {
     $room["capacity"] = 50;
     $room["wait"] = 30;
   }
@@ -53,7 +53,7 @@
     <div class="dashboard-section">
       <h1>Current Usage</h1>
       <div class="list">
-        <?php foreach ($room as $rooms) { ?>
+        <?php foreach ($rooms as $room) { ?>
           <div class="list-item">
             <div><?php print($room["name"] . " - " . $room["capacity"] . "% capacity (Estimated wait time: " . $room["wait"] . "minutes)") ?></div>
           </div>
