@@ -6,9 +6,9 @@
   $types = readObject("types");
 
   foreach ($rooms as $key => $room) {
-    $room["machines"] = getObject("machines", ["roomID" => $room["id"]]);
+    $room["machines"] = readObject("machines", ["roomID" => $room["id"]]);
     foreach ($machine as $key2 => $machine) {
-      $machine["issues"] = getObject("issues", ["machineID" => $machine["id"]]);
+      $machine["issues"] = readObject("issues", ["machineID" => $machine["id"]]);
     }
   }
 
