@@ -36,7 +36,7 @@
   </head>
   <body class="body">
     <div class="div-block">
-        <h1><?php print($machineID) ?></h1>
+        <h1>Machine <?php print($machineID) ?></h1>
         <a href="/api/load/create.php" class="submit-button w-button">I&#x27;m loading laundry</a>
         <a href="/success/notify.php" class="submit-button w-button">Somebody left their laundry</a>
         <a href="/report.php" class="submit-button w-button">This machine is broken</a>
