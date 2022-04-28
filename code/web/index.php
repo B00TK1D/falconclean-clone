@@ -12,9 +12,9 @@
     }
   }
 
-  foreach ($rooms as $room) {
-    $room["capacity"] = 50;
-    $room["wait"] = 30;
+  foreach ($rooms as $key => $room) {
+    $rooms[$key]["capacity"] = 50;
+    $rooms[$key]["wait"] = 30;
   }
 
 
