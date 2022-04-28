@@ -7,7 +7,7 @@
 
   foreach ($rooms as $key => $room) {
     $room["machines"] = readObject("machines", ["roomID" => $room["id"]]);
-    foreach ($machine as $key2 => $machine) {
+    foreach ($machines as $key2 => $machine) {
       $machine["issues"] = readObject("issues", ["machineID" => $machine["id"]]);
     }
   }
