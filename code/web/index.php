@@ -13,7 +13,7 @@
   }
 
   foreach ($rooms as $key => $room) {
-    $loads = readObject("loads", ["roomID" => $room["id"]], ["order" => "time"], ["time" => "DESC"]);
+    $loads = readObject("loads", ["roomID" => $room["id"]], ["order" => "time"], ["load" => "DESC"]);
     $rooms[$key]["capacity"] = 50;
     $rooms[$key]["wait"] = 30;
   }
