@@ -1,7 +1,8 @@
 <?php
   include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
 
-  $error = param("error");
+  //$error = param("error");
+  $error = 0;
 
 ?>
 
