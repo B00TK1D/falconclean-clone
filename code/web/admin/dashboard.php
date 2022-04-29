@@ -80,6 +80,12 @@
         <div class="horizontal-line"></div>
       </div>
     </div>
+    <div class="dashboard-section">
+      <h1>Account</h1><a href="/api/admin/logout" target="_blank" class="submit-button w-button">Logout</a>
+      <div class="list">
+        <div class="horizontal-line"></div>
+      </div>
+    </div>
     <script src="/jquery.js" type="text/javascript"></script>
   </body>
 </html>
