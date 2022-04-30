@@ -5,6 +5,8 @@
 
     $machine = schemaParam(objectFields("machine"));
 
+    var_dump($machine);
+
     $machineID = createObject("machines", $machine);
 
     print($machineID);
