@@ -31,7 +31,7 @@
       $rooms[$key]["total-machines"]++;
     }
     if ($rooms[$key]["total-machines"] > 0) {
-      $rooms[$key]["capacity"] = ($room[$key]["busy-machines"] / $rooms[$key]["total-machines"]) * 100;
+      $rooms[$key]["capacity"] = ($rooms[$key]["busy-machines"] / $rooms[$key]["total-machines"]) * 100;
       $rooms[$key]["wait"] = $rooms[$key]["total-wait"] / $rooms[$key]["total-machines"];
     } else {
       $rooms[$key]["capacity"] = 0;
