@@ -30,7 +30,7 @@
       $rooms[$key]["total-cycle"] += $machineType["cycleTime"];
       $rooms[$key]["total-machines"]++;
     }
-    if ($room[$key]["total-machines"] > 0) {
+    if ($rooms[$key]["total-machines"] > 0) {
       $rooms[$key]["capacity"] = ($room[$key]["busy-machines"] / $rooms[$key]["total-machines"]) * 100;
       $rooms[$key]["wait"] = $rooms[$key]["total-wait"] / $rooms[$key]["total-machines"];
     } else {
