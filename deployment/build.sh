@@ -8,7 +8,7 @@ build () {
     sudo docker-compose -f $1docker-compose.yaml down
     sudo docker container prune -f
     sudo docker-compose -f $1docker-compose.yaml build
-    sudo docker-compose -f $1docker-compose.yaml up &
+    sudo docker-compose --env-file ../.env -f $1docker-compose.yaml up &
     if [ -f "$1build.sh" ]; then
         sudo bash $1build.sh &
     fi
