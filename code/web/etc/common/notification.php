@@ -18,7 +18,7 @@
         );
 
         $notification["status"] = config("notification.status.sent");
-        $notification["redirect"] = config("deployment.domain") . $url;
+        $notification["redirect"] = $url;
         $notification["endpoint"] = $endpoint["id"];
         $notification["id"] = createObject("notifications", $notification);
 
@@ -42,7 +42,6 @@
             "image" => "/img/icon.png",
             "tag" => time(),
             "vibrate" => [100, 100, 300, 100, 100, 300],
-            "url" => "https://" . config("deployment.domain") . "/api/notification/redirect?notification=" . $notification["id"],
         ]);
 
         $result = $webPush->sendOneNotification(
