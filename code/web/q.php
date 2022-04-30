@@ -13,6 +13,13 @@
 
     $userID = checkJoined();
 
+    $currentLoad = readObject("loads", ["machineID" => $machineID], 1);
+    $machineType = readObject("machineTypes", ["id" => $currentLoad["machineTypeID"]], 1);
+    
+    if ($currentLoad != null && time_elapsed_minutes($currentLoad["time"]) < $machineType["cycleTime"]) {
+      redirect("/busy.php");
+    }
+
     $issues = readObject("issues", ["machineID" => $machine["id"]]);
 
     if (count($issues) > 0) {
