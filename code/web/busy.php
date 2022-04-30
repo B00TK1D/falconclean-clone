@@ -9,7 +9,7 @@
   $currentLoad = readObject("loads", ["machineID" => $machineID], 1);
   $machineType = readObject("types", ["id" => $machine["typeID"]], 1);
 
-  $timeLeft = time_elapsed_minutes($currentLoad["time"]) - $machineType["cycleTime"];
+  $timeLeft = time_elapsed_minutes($currentLoad["load"]) - $machineType["cycleTime"];
 
   $alternatives = readObject("machines", ["typeID" => $machine["typeID"]]);
   $recommendedAlternative = null;
