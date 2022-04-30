@@ -41,7 +41,7 @@
     $rooms[$key]["wait"] = 0;
     $rooms[$key]["capacity"] = 0;
     if (count($minWait) > 0) {
-      $rooms[$key]["wait"] = min($minWait);
+      $rooms[$key]["wait"] = max(min($minWait), 0);
     }
     if ($rooms[$key]["total-machines"] > 0) {
       $rooms[$key]["capacity"] = ($rooms[$key]["busy-machines"] / $rooms[$key]["total-machines"]) * 100;
