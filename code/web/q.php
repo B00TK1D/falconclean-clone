@@ -16,7 +16,7 @@
     $currentLoad = readObject("loads", ["machineID" => $machine["id"]], 1);
     $machineType = readObject("types", ["id" => $machine["typeID"]], 1);
     
-    if ($currentLoad != null && time_elapsed_minutes($currentLoad["time"]) < $machineType["cycleTime"]) {
+    if ($currentLoad != null && time_elapsed_minutes($currentLoad["load"]) < $machineType["cycleTime"]) {
       redirect("/busy.php");
     }
 
