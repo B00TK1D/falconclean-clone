@@ -16,7 +16,7 @@
     foreach ($room["machines"] as $key2 => $machine) {
       $load = readObject("loads", ["machineID" => $machine["id"]], 1);
       $machineType = readObject("types", ["id" => $machine["typeID"]]);
-      if ($load != null) {
+      if ($load != null && $machineType != null) {
         $time = $machineType["cycleTime"] - time_elapsed_minutes($load["load"]);
         if ($time > 0) {
           $room[$key]["total-wait"] += $time;
