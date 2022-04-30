@@ -6,7 +6,7 @@
                 "host" => "falconclean.db",
                 "database" => "falconclean",
                 "user" => "root",
-                "password" => $_ENV("MYSQL_PASSWORD"),
+                "password" => $_ENV["MYSQL_PASSWORD"],
             ]
         ],
         "security" => [
