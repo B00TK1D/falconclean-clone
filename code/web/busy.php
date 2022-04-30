@@ -68,9 +68,9 @@
       <div>This machine is currently busy.</div>
       <?php if ($recommendedAlternative) { ?>
         <?php if ($timeLeft > 0) { ?>
-            <div>However, machine #<?php print($recommendedAlternative["id"]) ?> will be open in <?php print($timeLeft) ?> minutes.</div>
+            <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> will be open in <?php print($timeLeft) ?> minutes.</div>
         <?php } else { ?>
-            <div>However, machine #<?php print($recommendedAlternative["id"]) ?> is open now.</div>
+            <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> is open now.</div>
         <?php } ?>
       <?php } ?>
       <a href="/load.php" class="submit-button w-button">Okay</a>

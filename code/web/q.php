@@ -13,7 +13,7 @@
 
     $userID = checkJoined();
 
-    $currentLoad = readObject("loads", ["machineID" => $machineID], 1);
+    $currentLoad = readObject("loads", ["machineID" => $machine["id"]], 1);
     $machineType = readObject("machineTypes", ["id" => $currentLoad["machineTypeID"]], 1);
     
     if ($currentLoad != null && time_elapsed_minutes($currentLoad["time"]) < $machineType["cycleTime"]) {
