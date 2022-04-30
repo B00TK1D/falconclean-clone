@@ -7,5 +7,7 @@
 
     $machineID = createObject("machines", $machine);
 
-    redirect("/admin/success.php");
+    print($machineID);
+
+    //redirect("/admin/success.php");
 ?>
