@@ -12,6 +12,9 @@
         "security" => [
             "password" => "1337",
         ],
+        "deployment" => [
+            "domain" => "falconclean.net"
+        ]
     ];
 
     function config($key) {

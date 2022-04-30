@@ -61,7 +61,7 @@
     <meta content="Status" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="/style.css" rel="stylesheet" type="text/css" />
-    <script src="/webfont.js" type="text/javascript"></script>
+    <script src="/js/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">
       WebFont.load({
         google: {
@@ -119,6 +119,6 @@
       </div>
     </div>
     -->
-    <script src="/jquery.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
   </body>
 </html>

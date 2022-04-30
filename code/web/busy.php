@@ -43,7 +43,7 @@
     <meta content="Busy" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="/style.css" rel="stylesheet" type="text/css" />
-    <script src="/webfont.js" type="text/javascript"></script>
+    <script src="/js/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">
       WebFont.load({
         google: {
@@ -76,6 +76,6 @@
         <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> is open now.</div>
       <?php } ?>
     </div>
-    <script src="/jquery.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
   </body>
 </html>

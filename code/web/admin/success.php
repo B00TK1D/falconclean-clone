@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link href="/style.css" rel="stylesheet" type="text/css" />
-    <script src="/webfont.js" type="text/javascript"></script>
+    <script src="/js/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">
       WebFont.load({
         google: {
@@ -32,6 +32,6 @@
       <h1>Machine Created</h1>
       <a href="/admin/dashboard.php" class="submit-button w-button">Back</a>
     </div>
-    <script src="/jquery.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
   </body>
 </html>

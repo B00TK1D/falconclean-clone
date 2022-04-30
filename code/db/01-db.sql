@@ -70,3 +70,26 @@ CREATE TABLE IF NOT EXISTS `issues` (
   `updated` timestamp DEFAULT now() ON UPDATE now() NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `notification_endpoints` (
+  -- Holds all push notification endpoints
+  `id` int(16) NOT NULL AUTO_INCREMENT,
+  `user` int(16) NOT NULL DEFAULT '-1',
+  `device` int(16) NOT NULL DEFAULT '-1',
+  `endpoint` varchar(512) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `auth` varchar(512) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `p256dh` varchar(512) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `created` timestamp DEFAULT now() NOT NULL,
+  `updated` timestamp DEFAULT now() ON UPDATE now() NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+CREATE TABLE IF NOT EXISTS `notifications` (
+  -- Holds all push notification endpoints
+  `id` int(16) NOT NULL AUTO_INCREMENT,
+  `redirect` varchar(512) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `status` int(16) NOT NULL DEFAULT '-1',
+  `endpoint` int(16) NOT NULL DEFAULT '-1',
+  `created` timestamp DEFAULT now() NOT NULL,
+  `updated` timestamp DEFAULT now() ON UPDATE now() NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;

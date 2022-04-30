@@ -90,6 +90,26 @@
                 "created" => "DESC"
             ],
         ],
+        "notification_endpoints" => [
+            "table" => "notification_endpoints",
+            "fields" => [
+                "id" => "i",
+                "user" => "i",
+                "device" => "i",
+                "endpoint" => "s",
+                "auth" => "s",
+                "p256dh" => "s",
+            ],
+        ],
+        "notifications" => [
+            "table" => "notifications",
+            "fields" => [
+                "id" => "i",
+                "redirect" => "s",
+                "endpoint" => "i",
+                "status" => "i",
+            ],
+        ],
     ];
 
 

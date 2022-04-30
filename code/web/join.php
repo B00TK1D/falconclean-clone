@@ -7,7 +7,7 @@
     <meta content="Join" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="/style.css" rel="stylesheet" type="text/css" />
-    <script src="/webfont.js" type="text/javascript"></script>
+    <script src="/js/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">
       WebFont.load({
         google: {
@@ -32,10 +32,12 @@
         <form action="/api/user/join.php" method="post" class="form">
             <input type="text" class="w-input" maxlength="256" name="name" placeholder="Name"/>
             <label class="field-label-2"> (This is just so other people can contact you about your laundry)</label>
-            <input type="submit" value="Join" class="submit-button w-button" />
+            <a class="submit-button w-button" id="push-subscription-button">Allow Notifications</a>
+            <input type="submit" value="Join" class="submit-button w-button" id="after-push-approval" disabled=""/>
         </form>
       </div>
     </div>
-    <script src="/jquery.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/notification.js" type="text/javascript"></script>
   </body>
 </html>

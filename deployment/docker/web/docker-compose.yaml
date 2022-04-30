@@ -14,6 +14,8 @@ services:
         - ../../../code/web:/var/www/html
     environment:
       - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - PUSH_PUBLIC_KEY=${PUSH_PUBLIC_KEY}
+      - PUSH_PRIVATE_KEY=${PUSH_PRIVATE_KEY}
     restart: always
     networks:
       - default
