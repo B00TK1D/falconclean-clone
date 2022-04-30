@@ -10,6 +10,7 @@
     }
 
     setParam("machineID", $machine["id"]);
+    setParam("qr", $qr); 
 
     $userID = checkJoined();
 
