@@ -13,7 +13,7 @@
 
   $alternatives = readObject("machines", ["typeID" => $machine["typeID"]]);
   $recommendedAlternative = null;
-  $bestTime = 0;
+  $bestTime = $timeLeft;
 
   foreach ($alternatives as $alternative) {
     $load = readObject("loads", ["machineID" => $alternative["id"]], 1);
@@ -26,6 +26,7 @@
       }
     } else {
       $recommendedAlternative = $alternative;
+      $bestTime = $machineType["cycleTime"];
       break;
     }
   }
