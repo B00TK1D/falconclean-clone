@@ -2,9 +2,9 @@
     include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
     includeUtil(["notification"]);
 
-    $qr = param("qr");
+    $machineID = param("machineID", ["sticky" => true]);
 
-    $machine = readObject("machines", ["qr" => $qr], 1);
+    $machine = readObject("machines", ["id" => $machineID], 1);
     if ($machine == null) {
         redirect("/success/notify.php");
     }
