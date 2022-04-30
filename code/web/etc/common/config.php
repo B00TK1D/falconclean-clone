@@ -15,6 +15,12 @@
         "deployment" => [
             "domain" => "falconclean.net",
         ],
+        "messages" => [
+            "notify" => [
+                "title" => "Falcon Clean",
+                "msg" => "Your laundry is done, please pick it up!",
+            ],
+        ],
     ];
 
     function config($key) {
