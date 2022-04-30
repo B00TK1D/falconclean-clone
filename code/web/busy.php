@@ -15,7 +15,7 @@
   $recommendedAlternative = $machine;
   $bestTime = time_elapsed_minutes($currentLoad["load"]);
 
-  var_dump($alternative);
+  var_dump($alternatives);
   die();
 
   foreach ($alternatives as $alternative) {
