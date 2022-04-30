@@ -10,9 +10,7 @@
 
     $method = $_SERVER['REQUEST_METHOD'];
 
-    $auth = authenticate("users");
-    $user = $auth["user"];
-    $adm = $auth["admin"];
+    $user = session("userID");
 
     print(file_get_contents('php://input'));
 
