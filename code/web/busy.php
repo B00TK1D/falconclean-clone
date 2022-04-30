@@ -15,9 +15,6 @@
   $recommendedAlternative = $machine;
   $bestTime = time_elapsed_minutes($currentLoad["load"]);
 
-  var_dump($alternatives);
-  die();
-
   foreach ($alternatives as $alternative) {
     $load = readObject("loads", ["machineID" => $alternative["id"]], 1);
     if ($load != null) {
@@ -34,7 +31,7 @@
     }
   }
 
-  $bestTime = $bestTime - $machineType["cycleTime"];
+  $bestTime = $machineType["cycleTime"] - $bestTime;
 
 ?>
 
