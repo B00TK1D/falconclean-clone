@@ -14,14 +14,12 @@
 
     print(file_get_contents('php://input'));
 
-
     $endpoint["endpoint"] = $subscription["endpoint"];
 
     if ($method == "POST") {
         $endpoint["auth"] = $subscription["keys"]["auth"];
         $endpoint["p256dh"] = $subscription["keys"]["p256dh"];
-        if ($user != null) $endpoint["user"] = $user["id"];
-        if ($admin != null) $endpoint["user"] = (-$admin["id"]);
+        $endpoint["user"] = $user;
         $endpoint["device"] = 0;
         createObject("notification_endpoints", $endpoint);
     } elseif ($method == "PUT") {
