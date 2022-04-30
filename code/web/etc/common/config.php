@@ -24,6 +24,7 @@
         "notification" => [
             "public_key" => $_ENV["PUSH_PUBLIC_KEY"],
             "private_key" => $_ENV["PUSH_PRIVATE_KEY"],
+            "subject" => "push@falconclean.app",
             "status" => [
                 "unsent" => 0,
                 "sent" => 1,
