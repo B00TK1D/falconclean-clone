@@ -32,12 +32,10 @@
         <form action="/api/user/join.php" method="post" class="form">
             <input type="text" class="w-input" maxlength="256" name="name" placeholder="Name" required=""/>
             <label class="field-label-2"> (This is just so other people can contact you about your laundry)</label>
-            <a class="submit-button w-button" id="push-subscription-button">Allow Notifications</a>
-            <input type="submit" value="Join" class="submit-button w-button" id="after-push-approval" disabled=""/>
+            <input type="submit" value="Join" class="submit-button w-button" id="after-push-approval"/>
         </form>
       </div>
     </div>
     <script src="/js/jquery.js" type="text/javascript"></script>
-    <script src="/js/notification.js" type="text/javascript"></script>
   </body>
 </html>
