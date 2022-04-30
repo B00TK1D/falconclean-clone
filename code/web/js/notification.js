@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
           pushButton.disabled = false;
           pushButton.textContent = 'Notifications Enabled';
           isPushEnabled = true;
-          document.getElementById("after-push-approval").disabled = false;
           continueRedirect();
           break;
         case 'disabled':
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'incompatible':
           pushButton.disabled = true;
           pushButton.textContent = 'Notifications not supported';
-          document.getElementById("after-push-approval").disabled = false;
           break;
         default:
           console.error('Unhandled push button state', state);
