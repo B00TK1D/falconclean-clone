@@ -75,7 +75,6 @@
       <?php } else { ?>
         <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> is open now.</div>
       <?php } ?>
-      <a href="/load.php" class="submit-button w-button">Okay</a>
     </div>
     <script src="/jquery.js" type="text/javascript"></script>
   </body>
