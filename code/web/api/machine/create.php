@@ -3,13 +3,9 @@
 
     checkAdmin();
 
-    $machine = schemaParam(objectFields("machine"));
-
-    var_dump($machine);
+    $machine = schemaParam(objectFields("machines"));
 
     $machineID = createObject("machines", $machine);
 
-    print($machineID);
-
-    //redirect("/admin/success.php");
+    redirect("/admin/success.php");
 ?>
