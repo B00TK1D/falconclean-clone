@@ -67,7 +67,11 @@
       <h1>Busy</h1>
       <div>This machine is currently busy.</div>
       <?php if ($bestTime > 0) { ?>
-        <div>The next machine open will be #<?php print($recommendedAlternative["qr"]) ?>, in <?php print($bestTime) ?> minutes.</div>
+        <?php if ($recommendedAlternative["qr"] == $machine["qr"]) { ?>
+          <div>This will be the next machine to open up, in <?php echo $bestTime; ?> minutes.</div>
+        <?php } else { ?>
+          <div>The next machine open will be #<?php print($recommendedAlternative["qr"]) ?>, in <?php print($bestTime) ?> minutes.</div>
+        <?php } ?>
       <?php } else { ?>
         <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> is open now.</div>
       <?php } ?>
