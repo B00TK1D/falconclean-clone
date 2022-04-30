@@ -38,17 +38,14 @@
       $rooms[$key]["total-cycle"] += $machineType["cycleTime"];
       $rooms[$key]["total-machines"]++;
     }
+    $rooms[$key]["wait"] = 0;
+    $rooms[$key]["capacity"] = 0;
     if (count($minWait) > 0) {
-      $rooms[$key]["min-wait"] = min($minWait);
-    } else {
-      $rooms[$key]["min-wait"] = 0;
+      $rooms[$key]["wait"] = min($minWait);
     }
     if ($rooms[$key]["total-machines"] > 0) {
       $rooms[$key]["capacity"] = ($rooms[$key]["busy-machines"] / $rooms[$key]["total-machines"]) * 100;
-    } else {
-      $rooms[$key]["capacity"] = 0;
     }
-    
   }
 
 
