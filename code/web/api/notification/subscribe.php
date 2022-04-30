@@ -10,7 +10,7 @@
 
     $method = $_SERVER['REQUEST_METHOD'];
 
-    $user = session("userID");
+    $user = checkJoined();
 
     print(file_get_contents('php://input'));
 
