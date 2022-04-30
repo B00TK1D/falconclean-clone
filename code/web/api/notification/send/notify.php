@@ -1,6 +1,5 @@
 <?php
     include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
-    includeUtil(["notification"]);
 
     $machineID = param("machineID", ["sticky" => true]);
 
@@ -19,7 +18,7 @@
         redirect("/success/notify.php");
     }
 
-    notificationSend(config("messages.notify.title"), config("messages.notify.msg"), "/", ["users" => [$user]]);
+    notificationSend(config("messages.notify.title"), config("messages.notify.msg"), "/", $user["id"]);
 
     redirect("/success/notify.php");
 ?>

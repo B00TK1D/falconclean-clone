@@ -13,7 +13,7 @@
             "password" => "1337",
         ],
         "deployment" => [
-            "domain" => "falconclean.net",
+            "domain" => "falconclean.app",
         ],
         "messages" => [
             "notify" => [
@@ -21,6 +21,16 @@
                 "msg" => "Your laundry is done, please pick it up!",
             ],
         ],
+        "notification" => [
+            "public_key" => $_ENV["PUSH_PUBLIC_KEY"],
+            "private_key" => $_ENV["PUSH_PRIVATE_KEY"],
+            "status" => [
+                "unsent" => 0,
+                "sent" => 1,
+                "read" => 2,
+            ],
+        ],
+
     ];
 
     function config($key) {
