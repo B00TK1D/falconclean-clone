@@ -22,12 +22,10 @@
       if ($time > $bestTime) {
         $recommendedAlternative = $alternative;
         $bestTime = $time;
-        break;
       }
     } else {
       $recommendedAlternative = $alternative;
       $bestTime = $machineType["cycleTime"];
-      break;
     }
   }
 
