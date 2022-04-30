@@ -15,11 +15,14 @@
   $recommendedAlternative = $machine;
   $bestTime = time_elapsed_minutes($currentLoad["load"]);
 
+  var_dump($alternatives);
+  die();
+
   foreach ($alternatives as $alternative) {
     $load = readObject("loads", ["machineID" => $alternative["id"]], 1);
     if ($load != null) {
       $time = time_elapsed_minutes($load["load"]);
-      if ($time < $bestTime) {
+      if ($time > $bestTime) {
         $recommendedAlternative = $alternative;
         $bestTime = $time;
         break;
