@@ -18,7 +18,7 @@
         );
 
         $notification["status"] = config("notification.status.sent");
-        $notification["redirect"] = $url;
+        $notification["redirect"] = config("deployment.domain") . $url;
         $notification["endpoint"] = $endpoint["id"];
         $notification["id"] = createObject("notifications", $notification);
 
