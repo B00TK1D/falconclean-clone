@@ -86,7 +86,7 @@
       <div class="list">
         <?php foreach ($rooms as $room) { ?>
           <div class="list-item">
-            <div><?php print($room["name"] . " - " . number_format((float)$room["capacity"], 2, '.', '') . "% capacity (Estimated wait time: " . (int)$room["wait"] . " minutes)") ?></div>
+            <div><?php print($room["name"] . " - " . (int)$room["capacity"] . "% capacity (Estimated wait time: " . (int)$room["wait"] . " minutes)") ?></div>
           </div>
         <?php } ?>
       </div>
