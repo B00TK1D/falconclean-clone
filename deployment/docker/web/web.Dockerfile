@@ -23,7 +23,7 @@ RUN /opt/certbot/bin/pip install --upgrade pip
 RUN /opt/certbot/bin/pip install certbot certbot-apache
 
 RUN ln -s /opt/certbot/bin/certbot /usr/bin/certbot
-#RUN certbot --apache --non-interactive --agree-tos -m stearns.josiah@gmail.com --domains falconclean.net
+#RUN certbot --apache --non-interactive --agree-tos -m stearns.josiah@gmail.com --domains falconclean.app
 
 RUN a2enmod rewrite
 
