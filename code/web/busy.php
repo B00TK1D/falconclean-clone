@@ -67,7 +67,7 @@
     <div class="div-block">
       <h1>Busy</h1>
       <div>This machine is currently busy.</div>
-      <?php if ($timeLeft > 0) { ?>
+      <?php if ($timeLeft < 0) { ?>
         <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> will be open in <?php print($timeLeft) ?> minutes.</div>
       <?php } else { ?>
         <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> is open now.</div>
