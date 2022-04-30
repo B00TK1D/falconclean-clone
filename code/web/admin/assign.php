@@ -41,13 +41,13 @@
       <h1>Register QR Code</h1>
       <div class="w-form">
         <form action="/api/machine/create.php" method="get" class="form">
-          <select name="type"required="" class="select-field w-select">
+          <select name="typeID"required="" class="select-field w-select">
             <option value="">Type</option>
             <?php foreach ($typeList as $type) { ?>
               <option value="<?php print($type["id"]); ?>"><?php print($type["name"]); ?></option>
             <?php } ?>
           </select>
-          <select name="room" required="" class="select-field w-select">
+          <select name="roomID" required="" class="select-field w-select">
             <option value="">Location</option>
             <?php foreach ($roomList as $room) { ?>
               <option value="<?php print($room["id"]); ?>"><?php print($room["name"]); ?></option>
