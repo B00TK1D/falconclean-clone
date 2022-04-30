@@ -13,7 +13,7 @@
 
   $alternatives = readObject("machines", ["typeID" => $machine["typeID"]]);
   $recommendedAlternative = null;
-  $bestTime = $timeLeft;
+  $bestTime = time_elapsed_minutes($currentLoad["load"]);
 
   foreach ($alternatives as $alternative) {
     $load = readObject("loads", ["machineID" => $alternative["id"]], 1);
