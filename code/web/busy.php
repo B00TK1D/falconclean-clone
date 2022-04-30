@@ -9,7 +9,7 @@
   $currentLoad = readObject("loads", ["machineID" => $machineID], 1);
   $machineType = readObject("types", ["id" => $machine["typeID"]], 1);
 
-  $timeLeft = time_elapsed_minutes($currentLoad["load"]) - $machineType["cycleTime"];
+  $timeLeft = $machineType["cycleTime"] - time_elapsed_minutes($currentLoad["load"]);
 
   $alternatives = readObject("machines", ["typeID" => $machine["typeID"]]);
   $recommendedAlternative = $machine;
@@ -68,7 +68,7 @@
       <h1>Busy</h1>
       <div>This machine is currently busy.</div>
       <?php if ($bestTime > 0) { ?>
-        <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> will be open in <?php print($timeLeft) ?> minutes.</div>
+        <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> will be open in <?php print($bestTime) ?> minutes.</div>
       <?php } else { ?>
         <div>However, machine #<?php print($recommendedAlternative["qr"]) ?> is open now.</div>
       <?php } ?>
