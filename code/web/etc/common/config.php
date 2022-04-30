@@ -6,15 +6,15 @@
                 "host" => "falconclean.db",
                 "database" => "falconclean",
                 "user" => "root",
-                "password" => getenv("MYSQL_PASSWORD"),
+                "password" => $_ENV("MYSQL_PASSWORD"),
             ]
         ],
         "security" => [
             "password" => "1337",
         ],
         "deployment" => [
-            "domain" => "falconclean.net"
-        ]
+            "domain" => "falconclean.net",
+        ],
     ];
 
     function config($key) {
