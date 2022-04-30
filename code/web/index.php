@@ -13,6 +13,10 @@
   }
 
   foreach ($rooms as $key => $room) {
+    $room[$key]["total-wait"] = 0;
+    $room[$key]["busy-machines"] = 0;
+    $room[$key]["total-cycle"] = 0;
+    $room[$key]["total-machines"] = 0;
     foreach ($room["machines"] as $key2 => $machine) {
       $load = readObject("loads", ["machineID" => $machine["id"]], 1);
       $machineType = readObject("types", ["id" => $machine["typeID"]], 1);
@@ -26,9 +30,14 @@
       $room[$key]["total-cycle"] += $machineType["cycleTime"];
       $room[$key]["total-machines"]++;
     }
-    $loads = readObject("loads", ["roomID" => $room["id"]], len($room["machines"]));
-    $rooms[$key]["capacity"] = $room[$key]["busy-machines"] / $room[$key]["total-machines"];
-    $rooms[$key]["wait"] = $room[$key]["total-wait"] / $room[$key]["total-machines"];
+    if ($room[$key]["total-machines"] > 0) {
+      $rooms[$key]["capacity"] = ($room[$key]["busy-machines"] / $room[$key]["total-machines"]) * 100;
+      $rooms[$key]["wait"] = $room[$key]["total-wait"] / $room[$key]["total-machines"];
+    } else {
+      $rooms[$key]["capacity"] = 0;
+      $rooms[$key]["wait"] = 0;
+    }
+    
   }
 
 
