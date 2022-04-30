@@ -7,7 +7,7 @@
   $machine = readObject("machines", ["id" => $machineID], 1);
   
   $currentLoad = readObject("loads", ["machineID" => $machineID], 1);
-  $machineType = readObject("machineTypes", ["id" => $currentLoad["machineTypeID"]], 1);
+  $machineType = readObject("types", ["id" => $machine["typeID"]], 1);
 
   $timeLeft = time_elapsed_minutes($currentLoad["time"]) - $machineType["cycleTime"];
 
