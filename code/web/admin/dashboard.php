@@ -50,11 +50,9 @@
       <h1>Reports</h1>
       <div class="list">
         <?php foreach ($reportList as $report) { ?>
-          <?php if ($report["room"] != null && $report["user"] != null && $report["machine"] != null) { ?>
-            <div class="list-item"><a href="/api/issue/delete?id=<?php print($report["id"]); ?>" class="icon-button w-inline-block"></a>
-              <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . " (Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?></div>
-            </div>
-          <?php } ?>
+          <div class="list-item"><a href="/api/issue/delete?id=<?php print($report["id"]); ?>" class="icon-button w-inline-block"></a>
+            <div><?php print($report["room"]["name"] . " - #" . $report["machine"]["qr"] . ": " . $report["description"] . " (Reported by " . $report["user"]["name"] . " on " . $report["created"] . ")"); ?></div>
+          </div>
         <?php } ?>
       </div>
       <div class="horizontal-line"></div>
