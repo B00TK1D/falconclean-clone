@@ -7,5 +7,5 @@
     setSession("name", $user["name"]);
     setSession("userID", $userID);
 
-    redirect("/notify.php");
+    redirect("/load.php");
 ?>
