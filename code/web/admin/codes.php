@@ -30,7 +30,7 @@
   <body class="print-body">
     <div class="sheet">
       <div id="w-node-_785a7e9d-39f3-951d-47b3-925a59acc53a-0464d932" class="print-label">
-        <div id="w-node-_80a8a6c5-b4b0-f625-0271-88617f7f7277-0464d932">FalconClean</div>
+        <div id="w-node-_80a8a6c5-b4b0-f625-0271-88617f7f7277-0464d932" class="qr-label">FalconClean</div>
         <div id="w-node-b4382de3-57ce-29fe-561e-c49e74bbef82-0464d932" class="qr-code"></div>
       </div>
     </div>
@@ -54,6 +54,11 @@
           text: "https://falconclean.net/q?r=" + i,
           correctLevel: QRCode.CorrectLevel.L
         });
+      }
+
+      var labels = document.getElementsByClassName("qr-label");
+      for (var i = 0; i < labels.length; i++) {
+        labels.item(i).innerHTML = "FalconClean #" + (i + 1);
       }
     </script>
   </body>
