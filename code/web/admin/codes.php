@@ -1,3 +1,18 @@
+<?php
+  include_once($_SERVER["DOCUMENT_ROOT"] . "/functs.php");
+
+  checkAdmin();
+
+  $machines = readObject("machines");
+
+  $takenCodes = [];
+
+  foreach ($machines as $machine) {
+    $takenCodes[] = $machine["qr"];
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,16 +63,25 @@
 
       multiplyNode(document.querySelector('.sheet'), 5, true);
 
+      var qr = 0;
+      var taken = <?php echo json_encode($takenCodes); ?>;
       var codes = document.getElementsByClassName("qr-code");
       for (var i = 0; i < codes.length; i++) {
+        if (taken.includes(qr++)) {
+          continue;
+        }
         new QRCode(codes.item(i), {
           text: "https://falconclean.net/q?r=" + i,
           correctLevel: QRCode.CorrectLevel.L
         });
       }
 
+      qr = 0;
       var labels = document.getElementsByClassName("qr-label");
       for (var i = 0; i < labels.length; i++) {
+        if (taken.includes(qr++)) {
+          continue;
+        }
         labels.item(i).innerHTML = "FalconClean #" + (i + 1);
       }
     </script>
