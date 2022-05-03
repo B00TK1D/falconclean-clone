@@ -71,7 +71,7 @@
           continue;
         }
         new QRCode(codes.item(i), {
-          text: "https://falconclean.net/q?r=" + i,
+          text: "https://falconclean.net/q?r=" + qr,
           correctLevel: QRCode.CorrectLevel.L
         });
         i++;
@@ -83,7 +83,7 @@
         if (taken.includes(qr)) {
           continue;
         }
-        labels.item(i).innerHTML = "FalconClean #" + (i + 1);
+        labels.item(i).innerHTML = "FalconClean #" + (qr + 1);
         i++;
       }
     </script>
