@@ -66,23 +66,25 @@
       var qr = 0;
       var taken = <?php echo json_encode($takenCodes); ?>;
       var codes = document.getElementsByClassName("qr-code");
-      for (var i = 0; i < codes.length; i++) {
-        if (taken.includes(qr++)) {
+      for (var i = 0; i < codes.length; qr++) {
+        if (taken.includes(qr)) {
           continue;
         }
         new QRCode(codes.item(i), {
           text: "https://falconclean.net/q?r=" + i,
           correctLevel: QRCode.CorrectLevel.L
         });
+        i++;
       }
 
       qr = 0;
       var labels = document.getElementsByClassName("qr-label");
-      for (var i = 0; i < labels.length; i++) {
-        if (taken.includes(qr++)) {
+      for (var i = 0; i < labels.length; qr++) {
+        if (taken.includes(qr)) {
           continue;
         }
         labels.item(i).innerHTML = "FalconClean #" + (i + 1);
+        i++;
       }
     </script>
   </body>
