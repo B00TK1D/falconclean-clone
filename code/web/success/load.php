@@ -29,7 +29,7 @@
   <body class="body">
     <div class="div-block">
       <h1>Landry Loaded</h1>
-      <div>You&#x27;ll get a notification when it&#x27;s done</div>
+      <div>Don&#x27;t forget to come back for it!</div>
       <a href="/load.php" class="submit-button w-button">Back</a>
     </div>
     <script src="/js/jquery.js" type="text/javascript"></script>
