@@ -1,5 +1,0 @@
-There are no major ethical considerations for this project, due the fact that no personal information is collected.  The greatest extent of personally identifiable information is the user's name, which they may decide to only provide their first name or a pseudonym.  Because of this, no privacy laws are applicable.
- 
-The only minor consideration is the theoretical possibility for someone to gain information about someone (i.e. stalking) by brute-force searching for their name (i.e. scanning all of the machines until they found their laundry).  However, this software does not make this process significantly easier than it would be without the software (such as by simply looking inside each machine in the laundry room), the software does not present any ethical concerns there.
- 
-The software does take all reasonable steps to ensure that the data is not leaked to anyone, by protecting against common vulnerabilities and misconfigurations.  These protections include defenses against XSS and SQL injection, as well as utilizing SSL to prevent MITM attacks.
